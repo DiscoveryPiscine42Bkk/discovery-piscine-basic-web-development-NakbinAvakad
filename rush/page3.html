@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แนะนำตัว</title>
+    <link rel="stylesheet" href="style.css"> <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; /* เปลี่ยนจาก 40px */
+            padding: 0;
+            /* เพิ่มพื้นหลังสีรุ้งแบบเคลื่อนไหว */
+           
+            background-size: 400% 400%;
+            animation: gradientAnimation 20s ease infinite;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* ป้องกัน scrollbar */
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.9); /* ทำให้โปร่งแสงเล็กน้อย */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            /* margin: auto; ลบออกเพราะ flexbox ใน body จัดการให้แล้ว */
+            text-align: center;
+            z-index: 1; /* ให้อยู่เหนืออิโมจิเงิน */
+        }
+        h1 {
+            /* โค้ดสำหรับตัวอักษรสีรุ้งเคลื่อนไหว */
+            background: linear-gradient(270deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: rainbowTextAnimation 19s ease infinite;
+        }
+         
+        
+        /* เพิ่ม rule สำหรับ font tag ถ้าต้องการให้เป็นสีรุ้ง (แต่ปกติแนะนำให้ใช้ class/p tag) */
+        font {
+            background: linear-gradient(270deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: rainbowTextAnimation 15s ease infinite;
+            line-height: 1.6;
+        }
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Keyframes สำหรับ animation ของพื้นหลัง */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 0%; }
+            25% { background-position: 100% 0%; }
+            50% { background-position: 100% 100%; }
+            75% { background-position: 0% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        /* Keyframes สำหรับ animation ของข้อความ (ใช้ร่วมกันกับ h1 และ p) */
+        @keyframes rainbowTextAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html#home">Profile</a>
+        <a href="index.html#section2">Portfolio</a>
+        <a href="index.html#section3">Contact</a>
+    </nav>
+
+
+
+    <div class="container">
+        <h1>สวัสดีจั๊ฟ ชื่อ ฟา นะ จั๊ฟ</h1>
+        <p>ไปนอนและ</p>
+        <p> นักศึกษาปีที่2 สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</p>
+        <p>สิ่งที่ชอบ</p>
+        <p>ของกินนนนนนนนน</p>
+        <p>เวลาว่าง </p>
+        <p>นอน</p>
+        <p>ชอบอยู่คนเดว</p>
+        <p>หากมีข้อสงสัยหรือต้องการพูดคุย หนูจะนอนใส่</p>
+        <p>[far031248@gmail.com]</p>
+        <div class="social-links">
+            <a href="https://github.com/DiscoveryPiscine42Bkk/discovery-piscine-basic-web-development-Farar234/tree/main" target="_blank">GitHub</a>
+        </div>
+    </div>
+</body>
+</html>

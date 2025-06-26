@@ -1,0 +1,261 @@
+/* --- Global Styles & Base Reset --- */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e8e1ff; /* สีพื้นหลังโดยรวม */
+    scroll-behavior: smooth; /* ทำให้การเลื่อนเป็นไปอย่างราบรื่น */
+    color: #333;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    background-color: #b6cff3; /* สีพื้นหลังของแถบนำทาง */
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: flex;
+    justify-content: left; /* จัดเมนูชิดซ้าย */
+}
+
+.navbar a {
+    display: block;
+    color: white; /* สีตัวอักษรของลิงก์ */
+    text-align: center;
+    padding: 18px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #cee5fd; /* สีพื้นหลังเมื่อเมาส์ชี้ */
+    color: rgb(130, 102, 194); /* สีตัวอักษรเมื่อเมาส์ชี้ */
+}
+
+/* --- Parallax Sections --- */
+.parallax-section {
+    position: relative;
+    min-height: 100vh; /* ความสูงของแต่ละส่วน parallax (100% ของ viewport height) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover; /* ครอบคลุมพื้นที่ทั้งหมด */
+    background-position: center; /* จัดตำแหน่งรูปภาพตรงกลาง */
+    background-repeat: no-repeat; /* ไม่ให้รูปภาพซ้ำ */
+    background-attachment: fixed; /* **นี่คือ key ของ Parallax Effect** */
+    text-align: center; /* ข้อความหลักใน parallax section จะอยู่ตรงกลาง */
+    color: white; /* สีข้อความหลักบนรูปภาพ */
+    text-shadow: 2px 2px 4px rgba(14, 37, 63, 0.7); /* เงาข้อความให้อ่านง่ายขึ้น */
+}
+
+/* กำหนดรูปภาพพื้นหลังสำหรับแต่ละส่วน */
+.parallax-1 {
+    background-image: url('https://www.kmitl.ac.th/sites/default/files/styles/cover_image/public/2024-11/01%E0%B8%A3%E0%B8%B2%E0%B8%87%E0%B8%A7%E0%B8%B1%E0%B8%A5%E0%B8%A2%E0%B8%AD%E0%B8%94%E0%B9%80%E0%B8%A2%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A115.3.jpeg?itok=PuDWI1Cq'); /* เดี๋ยวเปลี่ยนเป็นรูปมหาลัย */
+}
+
+.parallax-2 {
+    background-image: url('https://admin.curriculum.kmitl.ac.th/api/media/file/kbs2024-cover.jpg'); /* ฟาเลือก */
+}
+.parallax-3 {
+background-color: #afcbe9;}
+
+/* --- Container สำหรับเนื้อหาภายใน Parallax Section (Flexbox Base) --- */
+.parallax-container {
+    display: flex; /* ใช้ Flexbox ในการจัดวาง */
+    width: 90%; /* กำหนดความกว้างของ Container (ปรับได้ตามต้องการ) */
+    max-width: 1400px; /* กำหนดความกว้างสูงสุด */
+    margin: 0 auto; /* จัด Container ให้อยู่ตรงกลาง */
+    align-items: center; /* จัดแนวเนื้อหาตามแนวตั้งให้อยู่ตรงกลาง */
+    justify-content: space-around; /* กระจายพื้นที่ระหว่าง item */
+    padding: 50px 0; /* เพิ่ม padding ด้านบนและล่าง */
+    flex-wrap: wrap; /* ทำให้ item ขึ้นบรรทัดใหม่เมื่อหน้าจอเล็ก */
+}
+
+/* --- Profile Cards (สำหรับ #home section) --- */
+.profile-card {
+    background-color: rgba(255, 255, 255, 0.9); /* พื้นหลังการ์ดโปรไฟล์ */
+    color: #333;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    margin: 20px; /* ระยะห่างระหว่างการ์ด */
+    flex: 1; /* ทำให้การ์ดขยายและหดตัวได้ */
+    min-width: 300px; /* ความกว้างขั้นต่ำของการ์ด */
+    max-width: 350px; /* ความกว้างสูงสุดของการ์ด */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px); /* ยกการ์ดขึ้นเล็กน้อยเมื่อเมาส์ชี้ */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+}
+
+.profile-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* ทำให้รูปภาพเป็นวงกลม */
+    object-fit: cover; /* ครอบคลุมพื้นที่รูปภาพ */
+    border: px solid #007bff; /* ขอบรูปภาพ */
+    margin-bottom: 20px;
+}
+
+.profile-card h2 {
+    font-size: 2.2em;
+    color: #3e4cce;
+    margin-bottom: 20px;
+}
+
+.profile-card p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.btn-read-more {
+    display: inline-block;
+    background-color: #266ac4;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-read-more:hover {
+    background-color: #0056b3;
+}
+
+/* --- Three Columns Layout (สำหรับ .parallax-container.three-columns) --- */
+.parallax-container.three-columns {
+    /* คุณสมบัติ Flexbox เดิมยังคงอยู่ */
+    justify-content: space-between; /* จัดกระจายให้มีช่องว่างเท่าๆ กัน */
+}
+
+.column-item {
+    background-color: rgba(255, 255, 255, 0.9); /* พื้นหลังคอลัมน์ */
+    color: #333;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    margin: 15px; /* ระยะห่างระหว่างคอลัมน์ */
+    flex: 1; /* ทำให้แต่ละคอลัมน์ขยายและหดตัวได้ */
+    min-width: 200px; /* ความกว้างขั้นต่ำของแต่ละคอลัมน์ */
+    max-width: 32%; /* กำหนดให้ 3 คอลัมน์แสดงในแถวเดียว */
+    box-sizing: border-box; /* สำคัญ: รวม padding เข้าไปใน width */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.column-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.column-item h3 {
+    font-size: 1.8em;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.column-item img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.column-item p {
+    font-size: 1.em;
+    line-height: 1.6;
+}
+
+.btn-more-info {
+    display: inline-block;
+    background-color: #28a745; /* สีเขียว */
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+/* --- Normal Content Sections --- */
+.normal-content {
+    padding: 80px 10%; /* เพิ่ม padding ด้านบนและล่างให้เนื้อหามีพื้นที่มากขึ้น */
+    background-color: #ffffff; /* สีพื้นหลังของส่วนเนื้อหาปกติ */
+    text-align: center;
+    line-height: 1.8;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin: 20px 0; /* เพิ่มระยะห่างระหว่างส่วน */
+}
+
+.normal-content h2 {
+    font-size: 2.5em;
+    color: #007bff;
+    margin-bottom: 30px;
+}
+
+.normal-content p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 15px auto;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .profile-card {
+        max-width: 45%; /* ปรับให้ Profile card แสดง 2 อันต่อแถวบน tablet */
+    }
+    .column-item {
+        max-width: 48%; /* ปรับให้ 3 คอลัมน์ แสดง 2 อันต่อแถวบน tablet */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar a {
+        padding: 15px 15px;
+        font-size: 0.9em;
+    }
+    .parallax-container {
+        flex-direction: column; /* จัดให้เนื้อหาเรียงกันในแนวตั้งบนมือถือ */
+        padding: 30px 0;
+    }
+    .profile-card,
+    .column-item {
+        width: 90%; /* เต็มความกว้างของ container บนมือถือ */
+        max-width: 90%;
+        margin: 15px 0;
+    }
+    .profile-card img {
+        width: 120px;
+        height: 120px;
+    }
+    .profile-card h2 {
+        font-size: 1.8em;
+    }
+    .profile-card p {
+        font-size: 1em;
+    }
+    .content-overlay h1 {
+        font-size: 2.5em;
+    }
+    .content-overlay p {
+        font-size: 1.2em;
+    }
+    .normal-content {
+        padding: 50px 5%;
+    }
+    .normal-content h2 {
+        font-size: 2em;
+    }
+    .column-item h3 {
+        font-size: 1.5em;
+    }
+}

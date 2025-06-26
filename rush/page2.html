@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แนะนำตัว</title>
+    <link rel="stylesheet" href="style.css"> <style>
+        body
+
+        {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* คงพื้นหลังสีรุ้งเดิมไว้ */
+
+            background-size: 400% 400%; /* ขนาดพื้นหลังที่ใหญ่กว่าปกติ */
+            animation: gradientAnimation 20s ease infinite; /* ปรับเวลาเป็น 20 วินาที เพื่อให้เคลื่อนไหวช้าลงและลื่นไหลขึ้น */
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* ป้องกัน scrollbar หากมีบางส่วนของ background ล้นออกมา */
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            text-align: center;
+            z-index: 1;
+        }
+
+        h1 {
+            background: linear-gradient(270deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: rainbowTextAnimation 19s ease infinite;
+        }
+
+    font {
+            background: linear-gradient(270deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: rainbowTextAnimation 15s ease infinite;
+            line-height: 1.6;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Keyframes สำหรับ animation ของพื้นหลัง (เพิ่มลูกเล่นที่นี่) */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 0%; /* เริ่มต้นที่มุมซ้ายบน */
+            }
+            25% {
+                background-position: 100% 0%; /* เลื่อนไปมุมขวาบน */
+            }
+            50% {
+                background-position: 100% 100%; /* เลื่อนไปมุมขวาล่าง */
+            }
+            75% {
+                background-position: 0% 100%; /* เลื่อนไปมุมซ้ายล่าง */
+            }
+            100% {
+                background-position: 0% 0%; /* กลับไปเริ่มต้น */
+            }
+        }
+
+        /* Keyframes สำหรับ animation ของข้อความ (ถ้าคุณมีอยู่แล้ว ไม่ต้องเพิ่มซ้ำ) */
+        @keyframes rainbowTextAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* เพิ่ม CSS สำหรับอิโมจิเงิน */
+        .flying-money {
+            position: fixed;
+            font-size: 5em;
+            color: white; /* เปลี่ยนเป็นสีที่มองเห็นชัดเจนบนพื้นหลังรุ้ง */
+            z-index: 0;
+            animation: flyMoney 10s linear infinite, driftMoney 5s ease-in-out infinite alternate;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .flying-money:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s, 1s; }
+        .flying-money:nth-child(2) { top: 30%; left: 80%; animation-delay: 2s, 3s; font-size: 9.5em; }
+        .flying-money:nth-child(3) { top: 50%; left: 5%; animation-delay: 1s, 0s; }
+        .flying-money:nth-child(4) { top: 70%; left: 90%; animation-delay: 3s, 2s; font-size: 9.5em; }
+        .flying-money:nth-child(5) { top: 20%; left: 40%; animation-delay: 0.5s, 4s; }
+        .flying-money:nth-child(6) { top: 85%; left: 25%; animation-delay: 2.5s, 0.5s; font-size: 9.8em; }
+
+        @keyframes flyMoney {
+            0% { transform: translateY(-20px) rotate(0deg); }
+            100% { transform: translateY(100vh + 20px) rotate(360deg); }
+        }
+
+        @keyframes driftMoney {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(20px); }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html#home">Profile</a>
+        <a href="index.html#section2">Portfolio</a>
+        <a href="index.html#section3">Contact</a>
+    </nav>
+
+    <div class="flying-money">$</div>
+    <div class="flying-money">💰</div>
+    <div class="flying-money">$</div>
+    <div class="flying-money">💰</div>
+    <div class="flying-money">$</div>
+    <div class="flying-money">💰</div>
+
+    <div class="container">
+        <h1>สวัสดีครับ ชื่อ Little ครับ</h1>
+        <p>ฝากตัวด้วยคร้าบบ!</p>
+        <p> นักศึกษาปีที่2 สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</p>
+        <p>สิ่งที่ชอบ</p>
+        <p>ภาษา</p>
+        <p>เวลาว่าง </p>
+        <p><font>Money</font></p>
+        <p>หากมีข้อสงสัยหรือต้องการพูดคุย มาต่อยกับผมได้</p>
+        <p>[Puriatwisopee@gmail.com]</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/NewChainly?locale=th_TH" target="_blank">Facebook</a>
+            <a href="https://github.com/DiscoveryPiscine42Bkk/discovery-piscine-basic-web-development-NakbinAvakad/tree/main" target="_blank">GitHub</a>
+        </div>
+    </div>
+</body>
+</html>
